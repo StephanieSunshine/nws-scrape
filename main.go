@@ -65,29 +65,25 @@ func main() {
   parseFlags(&options)
 
   switch {
-    /*
-    case options.Output_file != "":
-      Fatal("Coming Soon")
-    */
-    
     // default for options Satellite is maxUint as a flag that nothing was set
     case options.Satellite == MaxUint:
       listSatellites(parent_url)
 
-      // default for options Image is maxUint as a flag that nothing was set
+    // default for options Image is maxUint as a flag that nothing was set
     case options.Image == MaxUint:
       sat := getSatUrls(parent_url)[options.Satellite]
       listImages(sat.url, sat.loc)
 
+    // if the user only wants the link to stdout they use this
     case options.Link_only:
       sat := getSatUrls(parent_url)[options.Satellite]
       image := getImageUrls(sat.url)[options.Image]
       fmt.Println(image.url)
 
+    // download the folder to the path ( default: . )
     default:
       sat := getSatUrls(parent_url)[options.Satellite]
       image := getImageUrls(sat.url)[options.Image]
-      
       getImage(image.url, options.Output_file)
   }
 }
