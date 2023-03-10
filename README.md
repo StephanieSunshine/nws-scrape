@@ -3,12 +3,13 @@ nws-scrape
 
 National Weather Service GOES Image Scraper
 
-# Usage nws-scrape [OPTIONS]
 
 Usage
 =====
 
 ```
+  nws-scrape [OPTIONS]
+
   Flags            Description
                                                                                                          
   -I, --img        Download image for a satelite to the current directory using the default filename. No 
