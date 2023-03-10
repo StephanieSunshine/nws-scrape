@@ -61,12 +61,14 @@ func main() {
 
   parent_url := "https://www.star.nesdis.noaa.gov/goes/index.php"
 
-  options := Input{MaxUint, MaxUint, "", false}
+  options := Input{MaxUint, MaxUint, ".", false}
   parseFlags(&options)
 
   switch {
+    /*
     case options.Output_file != "":
       Fatal("Coming Soon")
+    */
     
     // default for options Satellite is maxUint as a flag that nothing was set
     case options.Satellite == MaxUint:
@@ -85,6 +87,7 @@ func main() {
     default:
       sat := getSatUrls(parent_url)[options.Satellite]
       image := getImageUrls(sat.url)[options.Image]
-      getImage(image.url)
+      
+      getImage(image.url, options.Output_file)
   }
 }

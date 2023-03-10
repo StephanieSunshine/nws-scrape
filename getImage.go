@@ -7,8 +7,8 @@ import (
 )
 
 
-func getImage(url string){
-  resp, err := grab.Get(".", url)
+func getImage(url string, path string){
+  resp, err := grab.Get(path, url)
   if err != nil {
     fmt.Fprintln(os.Stderr, err)
     return
