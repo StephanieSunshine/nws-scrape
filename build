@@ -1,5 +1,0 @@
-#!/usr/bin/zsh
-
-go build -o nws-scrape main.go listSatellites.go newFlagUsage.go getSatUrls.go listImages.go getImageUrls.go getImage.go parseFlags.go Fatal.go
-
-
